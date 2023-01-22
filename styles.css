@@ -312,3 +312,34 @@ button:hover{
         border-color: orange;
     }
 }
+@media (min-width: 800px) {
+    .icon_menu {
+        display: none !important;
+    }
+    .container {
+        max-width: 950px;
+        margin: 0 auto;
+    }
+    .email {
+        /*transform: translateX(340px) translateY(700px);*/
+        position: absolute;
+        margin-left: 38rem;
+        margin-top: -30rem;
+    }
+    #skills {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        
+    }
+    #skills > div {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    #education {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
