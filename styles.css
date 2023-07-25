@@ -240,38 +240,36 @@ button:hover{
     transition:color 0.5s;
     cursor: pointer;
 }
-#skills .webDeveloper:hover,
-.webDeveloper:hover * {
+#skills .webDeveloper:hover, .webDeveloper:hover * {
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
     transition: color 0.5s;
     cursor: pointer;
-}#skills .desktop:hover,
-.desktop:hover * {
+}#skills .desktop:hover, .desktop:hover * {
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
     transition: color 0.5s;
     cursor: pointer;
-}#skills .python:hover,
-.python:hover * {
+}
+#skills .python:hover, .python:hover * {
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
     transition: color 0.5s;
     cursor: pointer;
-}#skills .electronic:hover,
-.electronic:hover * {
+}
+#skills .electronic:hover, .electronic:hover * {
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
     transition: color 0.5s;
     cursor: pointer;
-}#skills .sql:hover,
-.sql:hover * {
+}
+#skills .sql:hover, .sql:hover * {
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
     transition: color 0.5s;
     cursor: pointer;
-}#skills .linux:hover,
-.linux:hover * {
+}
+#skills .linux:hover, .linux:hover * {
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
     transition: color 0.5s;

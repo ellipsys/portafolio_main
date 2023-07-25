@@ -8,7 +8,6 @@ const menu_tag_show = document.querySelector(".list_menu");
 const menu_over_hidden = document.querySelector(".icon_close");
 
 let dark = JSON.parse(localStorage.getItem("DarkMode"));
-console.log(dark);
 if (dark) {
   body.classList.add("dark");
   change_icon_menu.classList.add("fa-sun");
@@ -26,19 +25,16 @@ menu.addEventListener("click", function (e) {
         change_icon_menu.classList.add("fa-moon");
         change_icon_menu.classList.remove("fa-sun");
         localStorage.setItem("DarkMode", "false");
-        console.log(dark);
+        
       } else {
         body.classList.add("dark");
         change_icon_menu.classList.add("fa-sun");
         change_icon_menu.classList.remove("fa-moon");
         localStorage.setItem("DarkMode", "true");
-        console.log(dark);
+        
       }
     }
   });
-
-
-
 
 menu_over.addEventListener("click", function (e) {
   if (e.target.classList.contains("icon_menu")) {
@@ -50,7 +46,11 @@ menu_over_hidden.addEventListener("click", function (e) {
     menu_tag_show.classList.toggle("list_menu_show");
   }
 });
-
+menu_tag_show.addEventListener("click",function(e) {
+  if(e.target.hasAttribute("href")){
+    menu_tag_show.classList.remove("list_menu_show");
+  };
+});
 button_cv.addEventListener("click",function (e) {
   window.open(path_cv, "_blank");
 })
