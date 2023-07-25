@@ -289,6 +289,12 @@ button:hover{
     font-family: 'Rambla', sans-serif;
     letter-spacing: 1.5px;
 }
+#education .manuela:hover *{
+    color: var(--salmon-hover-ligth);
+}
+#education .academlo:hover * {
+    color: var(--salmon-hover-ligth);
+}
 #education > div > img {
     display: block;
     border: solid 2px var(--text-color-ligth);
@@ -317,7 +323,7 @@ button:hover{
     color: var(--salmon-icons-skill-ligth);
 }
 .magic {
-    width: 51%;
+    width: 70%;
 }
 .magic >p {
     font-family: 'DM Mono', monospace;
@@ -325,10 +331,10 @@ button:hover{
     border-right: .15em solid green;
     white-space: nowrap;
     margin: 0 auto;
-    margin-right: 1rem;
+    margin-right: 0rem;
     letter-spacing: .15em;
     animation:
-        typing 2.5s steps(30, end),
+        typing 2.5s steps(40, end),
         blink-caret .75s infinite;
 }
 
@@ -350,7 +356,7 @@ button:hover{
         border-color: transparent
     }
 
-    50% {
+    30% {
         border-color: orange;
     }
 }
@@ -367,6 +373,9 @@ button:hover{
         position: absolute;
         margin-left: 38rem;
         margin-top: -30rem;
+    }
+    .magic {
+    width: 25%;
     }
     #skills {
         display: grid;
