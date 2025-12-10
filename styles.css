@@ -71,10 +71,13 @@ button:hover{
 
 }
 
+.animation__title{
+    transition: color 0.4s ease-out 0.4s;
+}
 .animation__title:hover{
-    font-size: 30px;
     cursor: pointer;
     color: var(--salmon-hover-ligth);
+    transition: color 0.1s ease-in;
 }
 .navbar {
     display: flex;
@@ -94,12 +97,6 @@ button:hover{
 
 .body   {
     margin: 1rem 0;
-}
-.email {
-    position: absolute;
-    writing-mode: vertical-rl;
-    transform: translateX(340px) translateY(700px);
-    letter-spacing: 2px;
 }
 
 .menu {
@@ -161,10 +158,10 @@ button:hover{
 .photo > img {
     border-radius: 50%;
     margin-left: 0.9rem;
+    transition: transform 0.5s ease;
 }
 .photo > img:hover{
     transform: scale(1.1);
-    animation: transform 0.5s;
 }
 
 .projects {
@@ -228,51 +225,67 @@ button:hover{
     
 }
 
+#skills > div, #skills > div * {
+    transition: color 0.4s ease-out 0.4s, border-color 0.4s ease-out 0.4s;
+}
+
 #skills > div, *:hover {
     color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
+    transition: color 0.1s ease-in, border-color 0.1s ease-in;
     cursor: pointer;
 }
 
 #skills .github:hover, .github:hover *{
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
-    transition:color 0.5s;
+    transition: color 0.1s ease-in, border-color 0.1s ease-in;
     cursor: pointer;
 }
 #skills .webDeveloper:hover, .webDeveloper:hover * {
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
+    transition: color 0.1s ease-in, border-color 0.1s ease-in;
     cursor: pointer;
 }#skills .desktop:hover, .desktop:hover * {
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
+    transition: color 0.1s ease-in, border-color 0.1s ease-in;
     cursor: pointer;
 }
 #skills .python:hover, .python:hover * {
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
+    transition: color 0.1s ease-in, border-color 0.1s ease-in;
     cursor: pointer;
 }
 #skills .electronic:hover, .electronic:hover * {
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
+    transition: color 0.1s ease-in, border-color 0.1s ease-in;
     cursor: pointer;
 }
 #skills .sql:hover, .sql:hover * {
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
+    transition: color 0.1s ease-in, border-color 0.1s ease-in;
     cursor: pointer;
 }
 #skills .linux:hover, .linux:hover * {
     border-color: var(--salmon-hover-ligth);
     color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
+    transition: color 0.1s ease-in, border-color 0.1s ease-in;
+    cursor: pointer;
+}
+#skills .cctv:hover, .cctv:hover * {
+    border-color: var(--salmon-hover-ligth);
+    color: var(--salmon-hover-ligth);
+    transition: color 0.1s ease-in, border-color 0.1s ease-in;
+    cursor: pointer;
+}
+#skills .accessControl:hover, .accessControl:hover * {
+    border-color: var(--salmon-hover-ligth);
+    color: var(--salmon-hover-ligth);
+    transition: color 0.1s ease-in, border-color 0.1s ease-in;
     cursor: pointer;
 }
 
@@ -299,10 +312,10 @@ button:hover{
     display: block;
     border: solid 2px var(--text-color-ligth);
     border-radius: 50%;
+    transition: transform 0.5s;
 }
 #education > div > img:hover{
     transform: translateY(-8px);
-    transition: transform 0.5s;
 }
 #education>div>p {
     display: block;
@@ -367,12 +380,6 @@ button:hover{
     .container {
         max-width: 950px;
         margin: 0 auto;
-    }
-    .email {
-        /*transform: translateX(340px) translateY(700px);*/
-        position: absolute;
-        margin-left: 38rem;
-        margin-top: -30rem;
     }
     .magic {
     width: 25%;
