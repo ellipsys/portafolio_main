@@ -7,6 +7,20 @@ const menu_over = document.querySelector(".menu");
 const menu_tag_show = document.querySelector(".list_menu");
 const menu_over_hidden = document.querySelector(".icon_close");
 
+function openProjectsOverlay() {
+  menu_tag_show.classList.add("list_menu_show");
+  menu_tag_show.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}
+
+function closeProjectsOverlay() {
+  menu_tag_show.classList.remove("list_menu_show");
+  menu_tag_show.setAttribute("aria-hidden", "true");
+  if (!skillModal.classList.contains("is-open")) {
+    document.body.classList.remove("modal-open");
+  }
+}
+
 let dark = JSON.parse(localStorage.getItem("DarkMode"));
 if (dark) {
   body.classList.add("dark");
@@ -38,18 +52,26 @@ menu.addEventListener("click", function (e) {
 
 menu_over.addEventListener("click", function (e) {
   if (e.target.classList.contains("icon_menu")) {
-    menu_tag_show.classList.toggle("list_menu_show");
+    if (menu_tag_show.classList.contains("list_menu_show")) {
+      closeProjectsOverlay();
+    } else {
+      openProjectsOverlay();
+    }
   }
 });
 menu_over_hidden.addEventListener("click", function (e) {
   if (e.target.classList.contains("icon_close_")) {
-    menu_tag_show.classList.toggle("list_menu_show");
+    closeProjectsOverlay();
   }
 });
-menu_tag_show.addEventListener("click",function(e) {
-  if(e.target.hasAttribute("href")){
-    menu_tag_show.classList.remove("list_menu_show");
-  };
+menu_tag_show.addEventListener("click", function (e) {
+  if (e.target === menu_tag_show) {
+    closeProjectsOverlay();
+    return;
+  }
+  if (e.target.closest("a[href]")) {
+    closeProjectsOverlay();
+  }
 });
 button_cv.addEventListener("click",function (e) {
   window.open(path_cv, "_blank");
@@ -148,7 +170,9 @@ function openSkillModal(skillKey) {
 function closeSkillModal() {
   skillModal.classList.remove("is-open");
   skillModal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("modal-open");
+  if (!menu_tag_show.classList.contains("list_menu_show")) {
+    document.body.classList.remove("modal-open");
+  }
 }
 
 skillsContainer.addEventListener("click", function (e) {
@@ -165,8 +189,13 @@ skillModal.addEventListener("click", function (e) {
 });
 
 document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && skillModal.classList.contains("is-open")) {
+  if (e.key !== "Escape") return;
+  if (skillModal.classList.contains("is-open")) {
     closeSkillModal();
+    return;
+  }
+  if (menu_tag_show.classList.contains("list_menu_show")) {
+    closeProjectsOverlay();
   }
 });
 
