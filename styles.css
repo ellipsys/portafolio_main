@@ -3,11 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rambla&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geostar+Fill&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 :root {
     --body-gray-ligth: #F9F9F9;
-    --button-hover-ligth: #DD5353;
-    --salmon-hover-ligth: #FF008E;
-    --salmon-icons-skill-ligth: #F30067;
+    --button-hover-ligth: #0d9488;
+    --salmon-hover-ligth: #0d9488;
+    --salmon-icons-skill-ligth: #0f766e;
     --my-name-is: #FF4848;
     --text-color-ligth: #444444;
 }
@@ -52,10 +53,10 @@ button:hover{
     transition: scale 0.5s;
 }
 .dark {
-    --text-color-ligth: #646f8b;
-    --button-hover-ligth:#64ffda;
-    --salmon-hover-ligth:#64ffda;
-    --body-gray-ligth:#0a192f;
+    --text-color-ligth: rgb(249, 249, 249);
+    --button-hover-ligth: #7dd3fc;
+    --salmon-hover-ligth: #7dd3fc;
+    --body-gray-ligth: rgb(24, 24, 24);
 }
 .container {
     background-color: var(--body-gray-ligth);
@@ -71,10 +72,13 @@ button:hover{
 
 }
 
+.animation__title{
+    transition: color 0.4s ease-out 0.4s;
+}
 .animation__title:hover{
-    font-size: 30px;
     cursor: pointer;
     color: var(--salmon-hover-ligth);
+    transition: color 0.1s ease-in;
 }
 .navbar {
     display: flex;
@@ -95,18 +99,19 @@ button:hover{
 .body   {
     margin: 1rem 0;
 }
-.email {
-    position: absolute;
-    writing-mode: vertical-rl;
-    transform: translateX(340px) translateY(700px);
-    letter-spacing: 2px;
-}
 
 .menu {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     cursor: pointer;
+}
+.icon_menu {
+    display: inline-block !important;
+    visibility: visible;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    line-height: 1;
 }
 .list_menu {
 
@@ -125,31 +130,103 @@ button:hover{
     transform: translateX(0);
     transition: transform 0.8s;
 }
-.list_menu div {
-    max-width: 300px;
-    margin: auto;
+.projects_modal_card {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--body-gray-ligth);
+}
+.list_menu .icon_close {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
     display: flex;
     justify-content: flex-end;
-    padding-top: 0.5rem;
-    padding-right: 0.5rem;
-}
-
-.list_menu  ul{
-    background-color: var(--body-gray-ligth);
-    display: flex;
-    list-style: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    gap: 1rem;
-}
-.list_menu a:hover{
-    color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
+    padding-top: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 1.5rem;
+    flex-shrink: 0;
 }
 .icon_close_ {
     cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.icon_close_:hover {
+    color: var(--salmon-hover-ligth);
+    transform: scale(1.15);
+}
+
+.projects_panel {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem 2rem;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    font-family: 'Rambla', sans-serif;
+}
+.projects_panel__title {
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+.projects_panel__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 0;
+    margin: 0;
+}
+.projects_panel__list a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--text-color-ligth);
+    border-radius: 0.5rem;
+    color: var(--text-color-ligth);
+    text-decoration: none;
+    transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.projects_panel__list a:hover {
+    color: var(--salmon-hover-ligth);
+    border-color: var(--salmon-hover-ligth);
+    transform: translateY(-2px);
+}
+.projects_panel__icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    width: 2rem;
+    text-align: center;
+}
+.projects_panel__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex: 1;
+    min-width: 0;
+}
+.projects_panel__name {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+.projects_panel__desc {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    line-height: 1.3;
+}
+.projects_panel__ext {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    flex-shrink: 0;
 }
 .photo {
 
@@ -161,41 +238,52 @@ button:hover{
 .photo > img {
     border-radius: 50%;
     margin-left: 0.9rem;
+    transition: transform 0.5s ease;
 }
 .photo > img:hover{
     transform: scale(1.1);
-    animation: transform 0.5s;
 }
 
-.projects {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    
-
-}
-
-.projects > a {
-    border: solid 1px var(--text-color-ligth);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    font-family: 'Rambla', sans-serif;
-    letter-spacing: 1.5px;
-}
-
-.projects > a:hover {
-    background-color: var(--salmon-hover-ligth);
-    color: var(--body-gray-ligth);
-    transition: background-color 0.9s;
+#banner {
+    text-align: left;
+    padding: 1rem 0.5rem 1.5rem;
 }
 #banner > p {
-    padding: 1rem;
+    padding: 1rem 0;
     letter-spacing: 1.5px;
     font-family: 'Rambla', sans-serif;
     text-align: center;
-    margin: 0.5rem;
+    margin: 0.5rem 0;
+}
+#cv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: auto;
+    padding: 0.85rem 1.75rem;
+    margin: 0.75rem auto 0;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background-color: var(--button-hover-ligth);
+    color: var(--body-gray-ligth);
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+#cv:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+    filter: brightness(1.05);
+    scale: 1;
+}
+#cv > i {
+    color: var(--body-gray-ligth);
+    font-size: 1.05rem;
 }
 #banner>span {
     font-family: 'Dancing Script', cursive;
@@ -221,59 +309,25 @@ button:hover{
     gap: 1rem;
     padding-left: 0.5rem;
     border-radius: 0.25rem;
+    cursor: pointer;
+    transition: color 0.3s ease 0.3s, border-color 0.3s ease 0.3s;
 }
 
-#skills > div >i {
+#skills > div > i,
+#skills > div > p {
+    transition: color 0.3s ease 0.5s;
+}
+
+#skills > div > i {
     font-size: 2rem;
-    
 }
 
-#skills > div, *:hover {
+#skills > div:hover,
+#skills > div:hover > i,
+#skills > div:hover > p {
     color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
-    cursor: pointer;
-}
-
-#skills .github:hover, .github:hover *{
     border-color: var(--salmon-hover-ligth);
-    color: var(--salmon-hover-ligth);
-    transition:color 0.5s;
-    cursor: pointer;
-}
-#skills .webDeveloper:hover, .webDeveloper:hover * {
-    border-color: var(--salmon-hover-ligth);
-    color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
-    cursor: pointer;
-}#skills .desktop:hover, .desktop:hover * {
-    border-color: var(--salmon-hover-ligth);
-    color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
-    cursor: pointer;
-}
-#skills .python:hover, .python:hover * {
-    border-color: var(--salmon-hover-ligth);
-    color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
-    cursor: pointer;
-}
-#skills .electronic:hover, .electronic:hover * {
-    border-color: var(--salmon-hover-ligth);
-    color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
-    cursor: pointer;
-}
-#skills .sql:hover, .sql:hover * {
-    border-color: var(--salmon-hover-ligth);
-    color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
-    cursor: pointer;
-}
-#skills .linux:hover, .linux:hover * {
-    border-color: var(--salmon-hover-ligth);
-    color: var(--salmon-hover-ligth);
-    transition: color 0.5s;
-    cursor: pointer;
+    transition: color 0.3s ease 0s, border-color 0.3s ease 0s;
 }
 
 
@@ -299,10 +353,10 @@ button:hover{
     display: block;
     border: solid 2px var(--text-color-ligth);
     border-radius: 50%;
+    transition: transform 0.5s;
 }
 #education > div > img:hover{
     transform: translateY(-8px);
-    transition: transform 0.5s;
 }
 #education>div>p {
     display: block;
@@ -325,17 +379,23 @@ button:hover{
 .magic {
     width: 70%;
 }
-.magic >p {
-    font-family: 'DM Mono', monospace;
+.magic > p {
+    font-family: 'Share Tech Mono', 'DM Mono', 'Courier New', monospace;
+    color: #33ff33;
+    background-color: #0a0a0a;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.25rem;
+    box-shadow: inset 0 0 0.5rem rgba(51, 255, 51, 0.15);
+    text-shadow: 0 0 4px rgba(51, 255, 51, 0.6);
     overflow: hidden;
-    border-right: .15em solid green;
+    border-right: 0.6em solid #33ff33;
     white-space: nowrap;
     margin: 0 auto;
     margin-right: 0rem;
     letter-spacing: .15em;
     animation:
         typing 2.5s steps(40, end),
-        blink-caret .75s infinite;
+        blink-caret 1s steps(2, start) infinite;
 }
 
 @keyframes typing {
@@ -348,31 +408,165 @@ button:hover{
     }
 }
 
-/* The typewriter cursor effect */
 @keyframes blink-caret {
-
-    from,
-    to {
-        border-color: transparent
+    0%, 50% {
+        border-right-color: #33ff33;
     }
-
-    30% {
-        border-color: orange;
+    50.01%, 100% {
+        border-right-color: transparent;
     }
 }
-@media (min-width: 800px) {
-    .icon_menu {
-        display: none !important;
+.skill-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+}
+.skill-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.25s ease, visibility 0s linear 0s;
+}
+.skill-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+.skill-modal__panel {
+    position: relative;
+    background-color: var(--body-gray-ligth);
+    color: var(--text-color-ligth);
+    border: 1px solid var(--text-color-ligth);
+    border-radius: 0.75rem;
+    width: 100%;
+    max-width: 420px;
+    padding: 1.75rem 1.5rem 1.5rem;
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.35);
+    font-family: 'Rambla', sans-serif;
+    letter-spacing: 0.5px;
+    transform: translateY(12px) scale(0.98);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.skill-modal.is-open .skill-modal__panel {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+.skill-modal__close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.6rem;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    color: var(--text-color-ligth);
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.skill-modal__close:hover {
+    color: var(--salmon-hover-ligth);
+    transform: scale(1.15);
+}
+.skill-modal__header {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+    padding-right: 1.5rem;
+}
+.skill-modal__icon {
+    font-size: 1.9rem;
+    color: var(--salmon-hover-ligth);
+    flex-shrink: 0;
+}
+.skill-modal__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+.skill-modal__description {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0 0 1rem;
+}
+.skill-modal__tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0;
+    margin: 0;
+}
+.skill-modal__tags li {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.55rem;
+    border: 1px solid var(--salmon-hover-ligth);
+    color: var(--salmon-hover-ligth);
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+    font-family: 'Share Tech Mono', monospace;
+}
+.skill-modal.is-open ~ * {
+    pointer-events: none;
+}
+body.modal-open {
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .list_menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.25rem;
+        background-color: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        transform: none !important;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.28s ease, visibility 0s linear 0.28s;
     }
+    .list_menu.list_menu_show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: opacity 0.28s ease, visibility 0s linear 0s;
+    }
+    .projects_modal_card {
+        width: 100%;
+        max-width: 720px;
+        max-height: min(90vh, 880px);
+        height: auto;
+        border-radius: 0.75rem;
+        border: 1px solid var(--text-color-ligth);
+        box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.35);
+        overflow: hidden;
+    }
+    .list_menu .projects_panel {
+        max-height: calc(90vh - 5rem);
+    }
+}
+
+@media (min-width: 800px) {
     .container {
         max-width: 950px;
         margin: 0 auto;
-    }
-    .email {
-        /*transform: translateX(340px) translateY(700px);*/
-        position: absolute;
-        margin-left: 38rem;
-        margin-top: -30rem;
     }
     .magic {
     width: 25%;
@@ -392,5 +586,8 @@ button:hover{
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
+    }
+    .projects_panel__list {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

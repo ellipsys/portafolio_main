@@ -15,16 +15,77 @@
             <div class="title">
                 <span class="animation__title">M</span><span class="animation__title">r</span><span class="animation__title">.</span><span class="animation__title">E</span><span class="animation__title">l</span><span class="animation__title">i</span>
             </div>
-            <div class="list_menu">
-                <div class="icon_close">
-                    <i class="fa-solid icon_close_ fa-xmark"></i>
+            <div class="list_menu" id="projects-overlay" aria-hidden="true">
+                <div class="projects_modal_card">
+                    <div class="icon_close">
+                        <i class="fa-solid icon_close_ fa-xmark"></i>
+                    </div>
+                    <div class="projects_panel">
+                    <h2 class="projects_panel__title">Proyectos Frontend</h2>
+                    <ul class="projects_panel__list">
+                        <li>
+                            <a href="https://academlo-project-e-comerce.netlify.app/" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-cart-shopping projects_panel__icon"></i>
+                                <span class="projects_panel__info">
+                                    <span class="projects_panel__name">E-Commerce</span>
+                                    <span class="projects_panel__desc">Tienda online responsive con carrito y checkout</span>
+                                </span>
+                                <i class="fa-solid fa-arrow-up-right-from-square projects_panel__ext" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://coffee-shop-academlo.netlify.app/" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-mug-hot projects_panel__icon"></i>
+                                <span class="projects_panel__info">
+                                    <span class="projects_panel__name">Coffee Shop</span>
+                                    <span class="projects_panel__desc">Cafetería con menú interactivo</span>
+                                </span>
+                                <i class="fa-solid fa-arrow-up-right-from-square projects_panel__ext" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://exercise-cards-react.netlify.app/" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-react projects_panel__icon"></i>
+                                <span class="projects_panel__info">
+                                    <span class="projects_panel__name">Exercise Cards</span>
+                                    <span class="projects_panel__desc">Cards de ejercicios construidas en React</span>
+                                </span>
+                                <i class="fa-solid fa-arrow-up-right-from-square projects_panel__ext" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dashboard-tv-xtam.netlify.app/" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-tv projects_panel__icon"></i>
+                                <span class="projects_panel__info">
+                                    <span class="projects_panel__name">Dashboard TV</span>
+                                    <span class="projects_panel__desc">Dashboard de programación para TV</span>
+                                </span>
+                                <i class="fa-solid fa-arrow-up-right-from-square projects_panel__ext" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://player-dark-wu-tang.netlify.app/" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-headphones projects_panel__icon"></i>
+                                <span class="projects_panel__info">
+                                    <span class="projects_panel__name">Wu-Tang Player</span>
+                                    <span class="projects_panel__desc">Reproductor musical temático en modo oscuro</span>
+                                </span>
+                                <i class="fa-solid fa-arrow-up-right-from-square projects_panel__ext" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://live-cam-webapp.netlify.app/" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-video projects_panel__icon"></i>
+                                <span class="projects_panel__info">
+                                    <span class="projects_panel__name">Live Cam</span>
+                                    <span class="projects_panel__desc">WebApp de cámara en vivo en el navegador</span>
+                                </span>
+                                <i class="fa-solid fa-arrow-up-right-from-square projects_panel__ext" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    </div>
                 </div>
-                <ul>
-                    <li></i><a href="#banner">Whoami</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
             </div>
             
             <div class="menu">
@@ -33,8 +94,7 @@
             </div>
         </div>        
     </div>
-    <div class="body">
-        <div class="email" aria-orientation="vertical">ellipsys@mr-eli.com</div>
+        <div class="body">
         <div class="photo">
             <img src="./images/photo_me.jpeg" alt="Photo Eliseo">
             <div class="magic">
@@ -42,39 +102,51 @@
             </div>
         </div>
         <div id="banner">
-            <span>Hi, my name is</span>
+            <span>Hi, I'm</span>
             <h1>Eliseo Torres</h1>
-            <p>Amante de aprender el arte de la programación, diseñar prototipos electronicos, juntar estas 2 amplias y bellas areas para hacer algo increible</p>
+            <p>Construyo soluciones donde el código y el hardware se encuentran. Backend developer con formación en electrónica, enfocado en automatización, escalabilidad y aprendizaje continuo.</p>
+            <button id="cv" type="button">
+                <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                <span>Descargar CV</span>
+            </button>
         </div>
         <div id="skills">
             
-            <div class="github">
+            <div class="github" data-skill="github">
                 <i class="fa-brands fa-github"></i>
                 <p>Manejo de entorno de control de versiones</p>
             </div>
-            <div class="webDeveloper">
+            <div class="webDeveloper" data-skill="webDeveloper">
                 <i class="fa-solid fa-code"></i>
                 <p>Desarrollo web responsive con metodologias BEM frontend y backend</p>
             </div>
-            <div class="desktop">
+            <div class="desktop" data-skill="desktop">
                 <i class="fa-solid fa-computer"></i>
                 <p>Desarrollo de aplicaciones desktop usando windows forms .NET</p>
             </div>
-            <div class="python">
+            <div class="python" data-skill="python">
                 <i class="fa-brands fa-python"></i>
                 <p>Desarrollo de apliciones y automatizaciones usando scripts de python con dispositovo IOT</p>
             </div>
-            <div class="electronic">
+            <div class="electronic" data-skill="electronic">
                 <i class="fa-solid fa-microchip"></i>
                 <p>Desarrollo de prototipos y circuitos</p>
             </div>
-            <div class="sql">
+            <div class="sql" data-skill="sql">
                 <i class="fa-solid fa-database"></i>
                 <p>Administración de SqlServer, Postgres</p>
             </div>
-            <div class="linux">
+            <div class="linux" data-skill="linux">
                 <i class="fa-brands fa-linux"></i>
                 <p>Fanatico predicador de Linux</p>
+            </div>
+            <div class="cctv" data-skill="cctv">
+                <i class="fa-solid fa-video"></i>
+                <p>Sistemas de CCTV y videovigilancia</p>
+            </div>
+            <div class="accessControl" data-skill="accessControl">
+                <i class="fa-solid fa-tachograph-digital"></i>
+                <p>Control de acceso y sistemas de seguridad</p>
             </div>
         </div>
         <div id="education">
@@ -90,11 +162,6 @@
             </div>  
         </div>
         
-    </div>
-    <div class="projects">
-        <a href="https://academlo-project-e-comerce.netlify.app/">E-comerce</a>
-        <a href="#">Blogs</a>
-        <a href="#">frontendMentor</a>
     </div>
     <div class="contact" id="contact">
         <div class="linkedin">
@@ -114,9 +181,23 @@
             <a href="https://twitter.com/ellipsys95"><i class="fa-brands fa-square-twitter"></i></a>
         </div>
     </div>
-    <button id="cv">Obtener HV</button>
    </div>
-    
+
+   <div class="skill-modal" id="skill-modal" aria-hidden="true" role="dialog" aria-labelledby="skill-modal-title">
+        <div class="skill-modal__backdrop" data-close="true"></div>
+        <div class="skill-modal__panel" role="document">
+            <button class="skill-modal__close" type="button" aria-label="Cerrar" data-close="true">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div class="skill-modal__header">
+                <i class="skill-modal__icon" aria-hidden="true"></i>
+                <h3 class="skill-modal__title" id="skill-modal-title"></h3>
+            </div>
+            <p class="skill-modal__description"></p>
+            <ul class="skill-modal__tags"></ul>
+        </div>
+   </div>
+
 </body>
 <script src="https://kit.fontawesome.com/27a8077929.js" crossorigin="anonymous"></script>
 <script src="./js/main.js"></script>
